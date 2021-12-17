@@ -1,4 +1,4 @@
-# misspellings
+# misspellings in the essay
 def nmisspelled(essay: str) -> int:
     import enchant
     from nltk.tokenize import RegexpTokenizer
