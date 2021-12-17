@@ -1,4 +1,4 @@
 # Word count
-from nltk.tokenize import RegexpTokenizer
 def length(essay: str) -> int:
+    from nltk.tokenize import RegexpTokenizer
 	return len(tokenizer.tokenize(essay))
