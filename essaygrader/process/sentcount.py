@@ -1,3 +1,3 @@
 # Total number of sentences
 def sentcount(essay):
-    return len(essay.split("."))
+    return len(essay.split(". "))

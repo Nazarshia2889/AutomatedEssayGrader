@@ -1,4 +1,4 @@
 # Average sentence length of essays
 def averageSentenceLength(essay):
-    sents = essay.split(".")
-    return sum([len(i) for i in sents.split(" ")])/len(sents)
+    sents = essay.split(". ")
+    return sum([len(i.split(" ")) for i in sents])/len(sents)
