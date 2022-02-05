@@ -1,3 +1,4 @@
+# percent of key nouns from prompt in essay
 def keyWords(keyWords, essay):
     import nltk
     is_noun = lambda pos: pos[:2] == 'NN'

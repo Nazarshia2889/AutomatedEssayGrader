@@ -1,5 +1,4 @@
 # misspellings in the essay
-# extra comment
 def nmisspelled(essay):
     import enchant
     d = enchant.Dict("en_US")

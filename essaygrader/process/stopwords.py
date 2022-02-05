@@ -1,5 +1,5 @@
 # percentage of stop words
-# Takes in an essay (list of words)
+# Takes in an essay (list of words) and returns percentage of stop words
 def stopWords(essay):
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize

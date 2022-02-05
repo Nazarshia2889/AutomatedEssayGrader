@@ -11,9 +11,9 @@ df = pd.read_feather('essaygrader/data/dataset.feather')
 source = df.loc[df['Source Dependent Responses'] == 1]
 pne = df.loc[df['Persuasive/Narrative/Expository'] == 1]
 
-# middle school
+# Source dependent
 X = source[['Average Word Length', 'misspelled',
-       'key_words_count', 'sentcount',
+       'word_count', 'key_words_count', 'sentcount',
        'score', 'percent_stop_words']]
 y = source['normalized_score']
 
@@ -25,9 +25,9 @@ regressor.fit(X_train, y_train)
 r_sq = regressor.score(X_test, y_test)
 print('score - Source Dependent Responses:', r_sq)
 
-# high school
+# persuasive/narrative/expository
 X = pne[['Average Word Length', 'misspelled',
-       'key_words_count', 'sentcount',
+       'word_count', 'key_words_count', 'sentcount',
        'score', 'percent_stop_words']]
 y = pne['normalized_score']
 

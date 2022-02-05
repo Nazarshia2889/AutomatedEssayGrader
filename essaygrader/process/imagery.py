@@ -1,3 +1,4 @@
+# Imagery score
 import pandas as pd
 import swifter
 from statistics import mean
