@@ -36,5 +36,5 @@ class VocabCounter():
         for i in self.essay1d:
             if i in vocabwordsall:
                 NumVocabWords +=1
-
+                
         return NumVocabWords/len(self.essay1d)

@@ -1,3 +1,4 @@
+# percent of key nouns from prompt in essay
 def keyWords(keyWords, essay):
     import nltk
     is_noun = lambda pos: pos[:2] == 'NN'
@@ -7,5 +8,5 @@ def keyWords(keyWords, essay):
     for i in nouns:
         count += essay.count(i.lower())
         count += essay.count(i.capitalize())
-    result = round((count/len(essay)*100), 2)
+    result = round(((count/len(essay))*100), 2)
     return result

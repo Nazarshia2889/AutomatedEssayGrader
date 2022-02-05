@@ -1,4 +1,4 @@
-#Repetition
+#Repetition (not currently in use)
 import nltk
 nltk.download()
 
