@@ -7,5 +7,5 @@ def keyWords(keyWords, essay):
     for i in nouns:
         count += essay.count(i.lower())
         count += essay.count(i.capitalize())
-    result = round((count/len(essay)*100), 2)
+    result = round(((count/len(essay))*100), 2)
     return result
