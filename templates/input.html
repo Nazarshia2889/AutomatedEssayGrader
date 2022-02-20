@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Essay Score Predictor</title> 
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body>
+        <form method="POST" onSubmit = 'return validate();' class='form'>
+            <h1>Are you in middle school or high school?</h2>
+            <div>
+                <input type="radio" id="msid" name="grade" value="r1">
+                <label for="msid">Middle School</label><br>
+                <input type="radio" id="hsid" name="grade" value="r2">
+                <label for="hsid">High School</label><br>
+            </div>
+            <h1>What kind of essay did you write?</h2>
+            <div>
+                <input type="radio" id="sdid" name="type" value="r1">
+                <label for="sdid">Source Dependent</label><br>
+                <input type="radio" id="pneid" name="type" value="r2">
+                <label for="pneid">Persuasive/Narrative/Expository</label><br>
+            </div>
+            <h1>Input your essay:</h2>
+            <input name="text" placeholder="input your essay">
+            <h1>Input your essay prompt:</h2>
+            <input name="text2" placeholder="input your essay prompt">
+            <input type="submit" id="submit-button" onclick = 'this.form.submit();'>
+        </form>
+        <p>{{ error }} </p>
+    </body>
+</html>

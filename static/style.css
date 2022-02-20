@@ -1,0 +1,80 @@
+body {
+    background-color: aliceblue;
+    margin: 20px;
+    text-align: center;
+    padding: 100px 0;
+    animation: transitionIn 1s;
+  }
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        trasnform: rotateX(0);
+    }
+}
+
+#explain {
+    margin: 50px;
+}
+
+h1 { color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 36px; font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; }
+
+
+p, label { color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 18px; 
+    line-height: 24px; 
+    margin: 0 0 24px; 
+    letter-spacing: -1px;
+    text-justify: inter-word; }
+
+a {
+    background-color: #f06237; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.95em;
+}
+
+a:hover {
+    background-color: #b0540e;
+}
+
+.essayarea {
+    background-color: rgb(243, 241, 241);
+    resize: none;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    font-size: 20px;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+input[type=submit] {
+    background-color: #f06237; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.95em;
+}
+
+input[type=submit]:hover {
+    background-color: #b0540e;
+  }

@@ -1,0 +1,5 @@
+xgboost
+
+__pycache__
+/essaygrader/models/__pycache__
+/essaygrader/process/__pycache__
