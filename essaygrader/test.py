@@ -1,3 +1,5 @@
+# test of model use
+
 # Import Libraries
 import pandas as pd
 import numpy as np 
@@ -60,8 +62,13 @@ def evaluate(essay):
     return points
 features.append(evaluate(cleanedessay))
 features.append(stopWords(cleanedessay))
+def vocabulary(li):
+    vocab = VocabCounter()
+    return round(vocab.CountVocab(li)*100, 2)
+features.append(vocabulary(cleanedessay))
 
-row = pd.DataFrame([features], columns=['Average Word Length', 'percent_misspelled', 'word_count', 'percent_key_words', 'sentcount', 'score', 'percent_stop_words'])
+
+row = pd.DataFrame([features], columns=['Average Word Length', 'percent_misspelled', 'word_count', 'percent_key_words', 'sentcount', 'score', 'percent_stop_words', 'voccabulary'])
 
 # Split by grade and topic
 df = pd.read_feather('essaygrader/data/dataset.feather')

@@ -1,4 +1,4 @@
-# Random forest regression model (preliminary)
+# Random forest regression model (best model)
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt

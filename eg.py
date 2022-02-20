@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
 import pickle
-
-# Import other functions
 from essaygrader.models.explainability import explain
 
 # Import models
@@ -16,7 +14,7 @@ regressor_source_hs = pickle.load(open('essaygrader/model_files/regressor_source
 regressor_pne_ms = pickle.load(open('essaygrader/model_files/regressor_pne_ms.sav', 'rb'))
 regressor_pne_hs = pickle.load(open('essaygrader/model_files/regressor_pne_hs.sav', 'rb'))
 
-
+# Essay grader
 class essaygrader():
 
     def __init__(self, grade, topic, row):

@@ -1,3 +1,4 @@
+# Explainiability
 import numpy as np
 import pandas as pd 
 
@@ -7,6 +8,7 @@ class explain():
         self.row = row
         self.df = df
     
+    # Give feedback for each feature
     def checkAverageWordLength(self):
         if self.row['Average Word Length'].iloc[0] < self.df['Average Word Length'].mean():
             return "Try incorporating bigger words into your essay."
