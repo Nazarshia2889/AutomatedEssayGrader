@@ -5,7 +5,7 @@ import numpy as np
 #Counts % of essay which contains vocab words
 #Input a 1d or 2d array or embedded list of words
 
-vocabwordsall = np.load('vocabularywords.npy')
+vocabwordsall = np.load('essaygrader/data/pastData/vocabularywords.npy')
 
 class VocabCounterException(Exception):
     pass
