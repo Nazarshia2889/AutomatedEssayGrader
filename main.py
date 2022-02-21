@@ -1,3 +1,5 @@
+# Automated Essay Scorer - Using data from Hewlett Foundation (Kaggle)
+
 # import regular libraries
 import pandas as pd
 import numpy as np 
@@ -25,6 +27,7 @@ from eg import essaygrader
 
 app = Flask(__name__)
 
+# For imagery score
 def evaluate(essay):
     emote = pd.read_excel('essaygrader/data/pastData/emote.xlsx')
     points = 0
@@ -39,10 +42,12 @@ def evaluate(essay):
 
     return points
 
+# For vocabulary
 def vocabulary(li):
     vocab = VocabCounter()
     return round(vocab.CountVocab(li)*100, 2)
 
+# Clean essay
 def cleanEssay(essay):
     essays = [essay]
     tokenizer = RegexpTokenizer(r'\w+')
@@ -53,6 +58,7 @@ def cleanEssay(essay):
     essays.append(cleanedessay_nosw)
     return essays
 
+# Make features for essay
 def makeFeatures(essays, prompt):
     essay = essays[0]
     cleanedessay = essays[1]
@@ -69,7 +75,7 @@ def makeFeatures(essays, prompt):
     row = pd.DataFrame([features], columns=['Average Word Length', 'percent_misspelled', 'word_count', 'percent_key_words', 'sentcount', 'score', 'percent_stop_words', 'vocabulary'])
     return row
 
-
+# Render templates
 @app.route('/')
 def my_form():
     return render_template('index.html')
@@ -84,25 +90,26 @@ def score():
 
 @app.route('/input', methods=['POST'])
 def my_form_post():
+    # Take from user input
     grade = request.form.get('grade', None)
     topic = request.form.get('type', None)
     essay = request.form['text']
     prompt = request.form['text2']
     if (grade is not None) and (topic is not None) and (essay != "") and (prompt != ""):
-        # grade = request.form['grade']
-        # topic = request.form['type']
-        # essay = request.form['text']
-        # prompt = request.form['text2']
+        # Clean essay and make features
         essays = cleanEssay(essay)
         row = makeFeatures(essays, prompt)
 
+        # Grade essay
         grader = essaygrader(grade, topic, row)
         answer = grader.gradeEssay()
         prediction = answer[0:25]
         feedback = answer[25:]
 
+        # Output prediction in score.html page
         return render_template('score.html', grade=prediction, explain=feedback)
     else:
+        # If any input field is empty, show message
         return render_template('input.html', error="Please fill in all required fields.")
 
 if __name__ == "__main__":

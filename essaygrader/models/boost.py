@@ -1,4 +1,4 @@
-# Linear regression model (preliminary)
+# XGBoost
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt
